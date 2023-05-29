@@ -1,7 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class pastoran{
+class Orang{
 - nama , nip , alamat , domisili : String
 ~getNama():String
 ~setNama(nama : String):void
@@ -28,10 +28,16 @@ class Sekretaris{
 +tunjanganAnak():double
 }
 
-class Umat{
-
-
+class Paroki{
+- namaParoki , alamatParoki , kodepos  : String
++String getnamaParoki():String
++void setNamaParoki(namaParoki : String):void
++String alamatParoki(alamatParoki :String):String
++void setAlamat():void
++String kodepos(kodepos : String):String
++void setKodePos():void
 }
+
 
 interface Jabatan{
 ~jabatan() : String
@@ -39,10 +45,20 @@ interface Jabatan{
 
 
 class Romo{
-+gajiPokokk():double
-+gajiTotal():double
-+double gajiTotal():double
+
++jumlahMisa(Scanner scan):void
++gajiTotalMisa():double
 }
+
+class Umat{
++getEmail():String
+DaftarMisa : String []
+}
+class DaftarMisa{
+
+
+}
+
 
 class Koster{
 -gajiPokok , tunjangan = 100000
@@ -57,31 +73,14 @@ interface Tunjangan{
 ~tunjanganAnak():double
 }
 
-class Paroki{
-}
-
-class tokoGereja{
--Bayar:double
--lilin , rosario : int
-+setjumlahBeliLilin(lilin : int ):void
-+setjumlahBeliRosario(rosario : int):void
-+getjumlahBeliLilin():int
-+getjumlahBeliRosario():int
-+totalBayar() :double
-+setPembayaran(bayar : double):void
-+getPembayaran():double
-}
-
-tokoGereja --|> Umat
-Jabatan -[dashed]-> Romo
-Jabatan -[dashed]> Sekretaris
-Jabatan -[dashed]>Koster
 Tunjangan -[dashed]->Sekretaris
 Tunjangan -[dashed]-> Koster
-Umat --|> pastoran
-Karyawan --|> pastoran
-Romo --|> Karyawan
+Jabatan -[dashed]|> Karyawan
+Romo --|> Orang
 Sekretaris --|> Karyawan
 Koster --|> Karyawan
-Paroki --|> pastoran
+Orang --|> Karyawan
+Orang --|> Umat
+Jabatan -[dashed]|>Romo
+Umat *-- Paroki
 @enduml

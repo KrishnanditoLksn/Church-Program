@@ -1,5 +1,20 @@
 package Project_Pbo_1;
 
-public class Umat extends pastoran {
+import java.util.Scanner;
+
+public class Umat extends Orang {
+    Umat(){}
+
+}
+class  Lingkungan{
+    private String namaLingkungan;
+
+    public String getNamaLingkungan(){
+        return namaLingkungan;
+    }
+
+    public void setNamaLingkungan(String namaLingkungan){
+        this.namaLingkungan = namaLingkungan;
+    }
 
 }

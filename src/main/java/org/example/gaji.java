@@ -1,4 +1,4 @@
-package Project_Pbo_1;
+package org.example;
 
 public interface gaji {
    double gajiPokokk();

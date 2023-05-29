@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+ title Bracketed line style without label
+ class foo
+ class bar
+ bar1 : [bold]
+ bar2 : [dashed]
+ bar3 : [dotted]
+ bar4 : [hidden]
+ bar5 : [plain]
+class Barrr{
+
+}
+ foo --> bar
+ foo -[bold]-> bar1
+ foo -[dashed]-> Barrr
+ foo -[dotted]-> bar3
+ foo -[hidden]-> bar4
+ foo -[plain]-> bar5
+
+
+class foo{
+foo --> bar : normal
+foo --> bar1 #line:red;line.bold;text:red  : red bold
+foo --> bar2 #green;line.dashed;text:green : green dashed
+foo --> bar3 #blue;line.dotted;text:blue   : blue dotted
+}
+@enduml

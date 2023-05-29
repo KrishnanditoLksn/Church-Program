@@ -1,12 +1,30 @@
 package Project_Pbo_1;
 
-public class Koster extends pastoran implements  Tunjangan {
-    double gajiPokok , tunjangan = 100000;
+public class Koster extends Karyawan implements Tunjangan {
+    private double gajiPokok;
+    private int jumlahAnak;
 
-    Koster(){}
+    Koster() {
+    }
 
+    @Override
     public double tunjanganKaryawan() {
-        return tunjangan;
+        return 100000;
+    }
+
+    @Override
+    public double tunjanganAnak() {
+        return tunjanganKaryawan() * getJumlahAnak();
+    }
+
+    @Override
+    public String jabatan() {
+        return "Koster";
+    }
+
+    @Override
+    public void setGajiPokok(double gajiPokok) {
+        this.gajiPokok = gajiPokok;
     }
 
     @Override
@@ -16,6 +34,15 @@ public class Koster extends pastoran implements  Tunjangan {
 
     @Override
     public double gajiTotal() {
-        return  tunjanganKaryawan() + gajiPokokk();
+        return  gajiPokok * tunjanganKaryawan();
     }
+
+    public int getJumlahAnak() {
+        return jumlahAnak;
+    }
+
+    public void setJumlahAnak(int jumlahAnak) {
+        this.jumlahAnak = jumlahAnak;
+    }
+
 }
