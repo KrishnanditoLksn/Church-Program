@@ -3,10 +3,10 @@ Program ini Dibuat sebagai pengganti UTS 2
 
 Program Pengelolaan Karyawan Gereja
 
-   Bernardus Adri Yuliantoro
-   Gusti Ngurah Indra Saputra
-   Emmanuel Krishnandito Laksana
-   Gabriel Hegel Pradana Nugraha
+  - Bernardus Adri Yuliantoro
+  - Gusti Ngurah Indra Saputra
+  - Emmanuel Krishnandito Laksana
+  - Gabriel Hegel Pradana Nugraha
 
 Tujuan program ini untuk memberi informasi bahwa di suatu gereja ada umat dan anggota pastoran yang meliputi Romo , Koster (petugas  kebersihan di gereja ) , Sekretaris(yang mengurusi administrasi di gereja)
 
