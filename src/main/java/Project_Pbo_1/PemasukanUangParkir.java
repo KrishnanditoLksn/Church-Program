@@ -20,7 +20,6 @@ public class PemasukanUangParkir extends PemasukanGereja {
 
     @Override
     public int getTotalPemasukan() {
-        System.out.println("Total Kendaraan masuk di gereja " + random);
         return totalParkir();
     }
 }
