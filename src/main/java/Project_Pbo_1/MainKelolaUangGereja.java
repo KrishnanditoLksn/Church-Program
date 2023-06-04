@@ -1,8 +1,10 @@
 package Project_Pbo_1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
-import static Project_Pbo_1.Umat.divider;
+import static Project_Pbo_1.Main.divider;
 
 public class MainKelolaUangGereja {
     public static void main(String[] args) {
@@ -23,19 +25,18 @@ public class MainKelolaUangGereja {
             System.out.print("Pilih : ");
             pilih = input.nextInt();
 
-
             if (pilih == 1) {
-                do {
-                    System.out.println("benar ");
-                    System.out.println("1. Donasi Untuk pembangunan Gereja");
-                    System.out.println("2. Kolekte gereja");
-                    System.out.println("3. Pemasukan Uang Parkir gereja");
-                    System.out.print("Pilih : ");
-                    choice = input.nextInt();
 
-                    for (int i = 0; i < pemasukanGerejas.length; i++) {
+                for (int i = 0; i < pemasukanGerejas.length; i++) {
+                    do {
+                        System.out.println("benar ");
+                        System.out.println("1. Donasi Untuk pembangunan Gereja");
+                        System.out.println("2. Kolekte gereja");
+                        System.out.println("3. Pemasukan Uang Parkir gereja");
+                        System.out.print("Pilih : ");
+                        choice = input.nextInt();
+
                         if (choice == 1) {
-
                             System.out.print("Nama : ");
                             String name = input.next();
                             pemasukanGerejas[i] = new PemasukanDonatur();
@@ -43,15 +44,16 @@ public class MainKelolaUangGereja {
                             ((PemasukanDonatur) pemasukanGerejas[i]).inputDonasi();
                         } else if (choice == 2) {
                             pemasukanGerejas[i] = new PemasukanTeksMisa();
-                            ((PemasukanTeksMisa) pemasukanGerejas[i]).jumlahBeliTeks();
+                            ((PemasukanTeksMisa) pemasukanGerejas[i]).jumlahBeliTeksMisa();
                         } else if (choice == 3) {
                             pemasukanGerejas[i] = new PemasukanUangParkir();
                             ((PemasukanUangParkir) pemasukanGerejas[i]).totalParkir();
                         } else {
                             System.out.println("Invalid Option ");
                         }
-                    }
-                } while (choice < 1 || choice > 3);
+                    } while (choice < 1 || choice > 3);
+                }
+
                 break;
             } else if (pilih == 2) {
                 System.out.println("Terimakasih");
@@ -60,11 +62,18 @@ public class MainKelolaUangGereja {
                 System.out.println("Input 1 - 2 ");
                 isRunning = true;
             }
-        } while ((isRunning));
+        } while (pilih < 1 || pilih > 2);
 
         /*
         nambah donasi
          */
+                PemasukanGereja [] temp;
+                temp = Arrays.copyOf(pemasukanGerejas , pemasukanGerejas.length + 1);
+                pemasukanGerejas  = temp;
+
+                ArrayList<PemasukanGereja>pemasukanGerejas1 = new ArrayList<>();
+
+
 
 
         /*
@@ -78,12 +87,13 @@ public class MainKelolaUangGereja {
         pilih = input.nextInt();
 
         sekretariatGereja.setPemasukanGerejas(pemasukanGerejas);
+
         do {
             if (pilih == 1) {
                 do {
                     divider();
                     System.out.println("Informasi Daftar uang pemasukan di " + paroki.getNamaGereja());
-                    System.out.println("Ketua Sekretariat  : " + sekretariatGereja.getKetua_Sekretaris());
+                    System.out.println("Ketua Sekretariat  : " + sekretariatGereja.getKetuaSekretaris());
                     divider();
                     System.out.println(" 1. Cetak Daftar Pemasukan   ");
                     System.out.println(" 2. Cetak Pemasukan Parki  gereja ");
