@@ -1,16 +1,24 @@
 package Project_Pbo_1;
 
-import java.util.Random;
+import java.util.Scanner;
 
 public class PemasukanUangParkir extends PemasukanGereja {
-    int random, nom, total;
+    private  int  total;
+    private String namaLinkungan;
 
-    public int totalParkir() {
-        Random ran = new Random();
-        random = ran.nextInt(150);
-        nom = 2000;
-        total = random * nom;
+    public double totalParkir() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Masukkan Uang total parkir  : ");
+        total  = input.nextInt();
         return total;
+    }
+
+    public String getNamaLinkungan(){
+        return  namaLinkungan;
+    }
+
+    public void setNamaLinkungan(String namaLinkungan){
+        this.namaLinkungan = namaLinkungan;
     }
 
     @Override
@@ -20,6 +28,6 @@ public class PemasukanUangParkir extends PemasukanGereja {
 
     @Override
     public int getTotalPemasukan() {
-        return totalParkir();
+        return total;
     }
 }
